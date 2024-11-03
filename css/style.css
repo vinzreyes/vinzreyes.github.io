@@ -148,7 +148,7 @@ a:focus {
 
 .navbar .navbar-brand {
     margin: 0;
-    font-size: 35px;
+    font-size: 45px;
     line-height: 0px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -262,6 +262,7 @@ a:focus {
     position: relative;
     text-align: right;
     padding-right: 75px;
+    padding-top: 120px;
 }
 
 .hero .hero-image img {

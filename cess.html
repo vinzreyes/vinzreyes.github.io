@@ -59,6 +59,12 @@
             text-shadow: 1px 1px 3px red;
             display: none;
         }
+        #countdown {
+            font-size: 500px; /* Big font size for countdown */
+            font-weight: bold;
+            color: red; /* Make the countdown text stand out */
+            margin-top: 50px;
+        }
     </style>
 </head>
 <body>
@@ -68,22 +74,33 @@
         <button id="yes" onclick="sayYes()">YES</button>
         <button id="no" onmouseover="moveNo()">NO</button>
     </div>
-    <p id="message"></p>
+    <div id="message"></div>
+    <div id="countdown"></div>
 
     <script>
-        function moveNo() {
-            let button = document.getElementById("no");
-            let x = Math.random() * (window.innerWidth - 100);
-            let y = Math.random() * (window.innerHeight - 100);
-            button.style.left = `${x}px`;
-            button.style.top = `${y}px`;
-        }
-
         function sayYes() {
+            // Display the initial message
             document.getElementById("message").innerHTML = 
                 "SABI KO NA YES sasabihin mo eh! ❤️ <br> FEB 15 Saturday kasi may pasok 14, sagot kita!";
             document.getElementById("message").style.display = "block";
+
+            // Countdown logic
+            let countdown = 3;
+            let countdownElement = document.getElementById("countdown");
+            
+            let countdownInterval = setInterval(function() {
+                countdownElement.innerHTML = countdown;
+                countdown--;
+                
+                if (countdown < 0) {
+                    clearInterval(countdownInterval); // Stop the countdown
+                    window.location.href = "love.html"; // Redirect after countdown
+                }
+            }, 1000); // Update every second
         }
+
+        // Call sayYes function when the page loads
+        sayYes();
     </script>
 
 </body>

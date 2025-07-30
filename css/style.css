@@ -1572,6 +1572,60 @@ a:focus {
     color: #414141;
 }
 
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    transition: transform 0.4s ease;
+    border-bottom: 1px solid #eee;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.card-body .project-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 1rem;
+}
+
+.card-body .project-buttons a {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+.btn-outline-dark:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.btn-outline-success:hover {
+    background-color: #198754;
+    color: #fff;
+}
+
+
+.btn-light:hover {
+    background-color: #f1f1f1;
+}
+
 @media (max-width: 575.98px) {
     .footer .footer-info h2 {
         margin-bottom: 20px;

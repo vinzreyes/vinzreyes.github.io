@@ -1,0 +1,171 @@
+/* ===== High-contrast dark palette (default) + light variant ===== */
+:root{
+    --bg:#0a0f1a;        /* darker background */
+    --panel:#0e1624;     /* elevated surfaces */
+    --panel-2:#111a2b;   /* secondary surface */
+    --text:#e6e9f0;      /* main text */
+    --muted:#a8b3cf;     /* muted text */
+    --border:#243145;    /* borders */
+    --accent:#7c3aed;    /* violet */
+    --accent-2:#22d3ee;  /* cyan */
+    --radius:16px;
+    --shadow:0 14px 42px rgba(0,0,0,.45);
+  }
+  html[data-theme="light"]{
+    --bg:#ffffff;
+    --panel:#f7fafc;
+    --panel-2:#ffffff;
+    --text:#0f172a;
+    --muted:#475569;
+    --border:#e3e8ef;
+    --accent:#6d28d9;
+    --accent-2:#0ea5b7;
+    --shadow:0 12px 28px rgba(2,6,23,.08);
+  }
+  
+  /* ===== Base ===== */
+  html,body{height:100%}
+  body{
+    padding-top:74px;
+    background:
+      radial-gradient(1200px 800px at 70% -10%, rgba(124,58,237,.18), transparent 40%),
+      radial-gradient(900px 600px at 10% -20%, rgba(34,211,238,.12), transparent 35%),
+      var(--bg);
+    color:var(--text);
+    font-synthesis-weight:none;
+  }
+  .section-pad{padding:70px 0}
+  .section-pad.alt{background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 78%, transparent), var(--panel-2))}
+  
+  /* ===== Navbar ===== */
+  .glassy{
+    backdrop-filter:saturate(160%) blur(10px);
+    background:color-mix(in oklab, var(--bg) 85%, transparent);
+  }
+  .brand-dotnet{color:var(--accent);font-weight:800;letter-spacing:-.02em}
+  .brand-dev{font-weight:700;letter-spacing:-.02em}
+  .navbar .nav-link{opacity:.85}
+  .navbar .nav-link.active,.navbar .nav-link:hover{opacity:1}
+  
+  /* ===== Hero ===== */
+  .hero .text-gradient{
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-card{
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 70%, transparent), var(--panel-2));
+  }
+  .hero-avatar{
+    background:linear-gradient(120deg, color-mix(in oklab, var(--accent) 16%, transparent), color-mix(in oklab, var(--accent-2) 12%, transparent)), #0b0f17;
+    border-top-left-radius:var(--radius);
+    border-top-right-radius:var(--radius);
+  }
+  .stat strong{font-size:1.35rem;display:block}
+  .stat span{color:var(--muted)}
+  
+  /* ===== Cards / Mesh ===== */
+  .card-mesh{
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    background:
+      radial-gradient(420px 220px at 20% -10%, rgba(124,58,237,.09), transparent 45%),
+      radial-gradient(420px 220px at 120% 10%, rgba(34,211,238,.10), transparent 45%),
+      var(--panel);
+  }
+  .shadow-soft{box-shadow:var(--shadow)}
+  .hover-lift{transition:transform .25s ease, box-shadow .25s ease}
+  .hover-lift:hover{transform:translateY(-4px);box-shadow:0 18px 52px rgba(0,0,0,.5)}
+  .bg-accent-soft{background:color-mix(in oklab, var(--accent) 28%, transparent)!important}
+  
+  /* ===== Tags / Chips ===== */
+  .bg-tag{background:var(--panel-2);color:var(--muted);border:1px solid var(--border)}
+  .tag{display:inline-block;padding:.25rem .5rem;border-radius:10px;background:var(--panel-2);color:var(--muted);border:1px dashed var(--border)}
+  .chip{padding:.5rem .75rem;border-radius:999px;border:1px solid var(--border);background:var(--panel-2);color:var(--text);font-weight:500}
+  
+  /* ===== Timeline ===== */
+  .timeline{list-style:none;padding-left:1rem;border-left:2px dashed var(--border);margin:0}
+  .timeline li{position:relative;margin:18px 0}
+  .tl-dot{position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in oklab, var(--accent) 25%, transparent)}
+  .tl-range{color:var(--muted);font-size:.9rem}
+  .tl-title{font-weight:700}
+  .tl-desc{color:var(--muted)}
+  
+  /* ===== Filters ===== */
+  .filters .btn.active{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border:none}
+  
+  /* ===== Back to top ===== */
+  .back-to-top{position:fixed;right:20px;bottom:24px;z-index:1000;display:none;border-radius:50%}
+  
+  /* ===== Animations ===== */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease, transform .5s ease}
+  .reveal.show{opacity:1;transform:translateY(0)}
+  a,.btn,.nav-link{transition:opacity .2s ease, background-color .2s ease, color .2s ease, transform .2s ease}
+  
+  /* ===== Utilities ===== */
+  .text-muted{color:var(--muted)!important}
+  .border-opacity-10{border-color:color-mix(in oklab, var(--text) 10%, transparent)!important}
+  
+  /* ===== Modal tweaks for dark ===== */
+  .modal-content.card-mesh{color:var(--text)}
+  .btn-close.btn-close-white{filter:invert(1) grayscale(100%)}
+  .carousel-item img{display:block;width:100%;height:auto;object-fit:cover}
+  
+  /* ===== Visibility fixes for light mode ===== */
+html[data-theme="light"] body {
+    background:
+      radial-gradient(1200px 800px at 70% -10%, rgba(124,58,237,.10), transparent 40%),
+      radial-gradient(900px 600px at 10% -20%, rgba(34,211,238,.08), transparent 35%),
+      var(--bg);
+  }
+  
+  /* Make navbar text and links use theme tokens (not forced white) */
+  .navbar, .navbar * {
+    color: var(--text);
+  }
+  .navbar .nav-link { color: var(--text); }
+  .navbar .nav-link.active, .navbar .nav-link:hover { color: var(--text); opacity: 1; }
+  
+  /* Toggler icon: invert in light mode so it’s visible */
+  html[data-theme="light"] .navbar .navbar-toggler-icon {
+    filter: invert(1) grayscale(100%);
+  }
+  
+  /* Outline buttons should contrast in light mode */
+  html[data-theme="light"] .btn-outline-light {
+    color: var(--text);
+    border-color: var(--border);
+  }
+  html[data-theme="light"] .btn-outline-light:hover {
+    background: color-mix(in oklab, var(--text) 8%, transparent);
+    color: var(--text);
+  }
+  
+  /* Modal close icon visible on light or dark */
+  .btn-close.btn-close-white { filter: invert(1) grayscale(100%); }
+  
+  /* Ensure card and text colors stay readable in light mode */
+  .card, .card * { color: inherit; }
+  .card .text-muted { color: var(--muted) !important; }
+  
+  /* ===== Outline-light fix for light mode ===== */
+html[data-theme="light"] .btn-outline-light {
+    color: var(--text);           /* use theme text color */
+    border-color: var(--border);  /* use theme border color */
+  }
+  
+  html[data-theme="light"] .btn-outline-light:hover {
+    background-color: color-mix(in oklab, var(--text) 10%, transparent);
+    color: var(--text);
+    border-color: var(--text);
+  }
+
+  .tl-dot {
+    position: absolute;
+    left: -10px;             /* move it further left */
+    transform: translateX(-50%); /* centers it relative to its position */
+  }
+  
+  
+  
